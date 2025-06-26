@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --container-contain: 1800px;
+  --text-largec: 200px;
+  --text-lesslargec: 180px;
+  --font-primary: 'Lora', serif;
+  /* --color-primary: #060606;  */
+  --color-primary: #1C1C1C;
+  --color-secondary: #4B4B4B;
+  --color-text-primary: #FAFAFA;
+}
+
+.underline-animate {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-animate::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px; /* underline thickness */
+  width: 100%;
+  background-color: currentColor; /* match text color */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* This is for exp page */
+.box-hover:hover .underline-animate::after {
+  transform: scaleX(1);
+}
+
+/* this is for footer */
+.underline-animate:hover::after,
+.underline-animate:focus::after {
+  transform: scaleX(1);
+}
+
+
+
+/* Carousal effect in tech page - abandoned and using react slick*/
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 10s linear infinite;
+}
+
+
+
