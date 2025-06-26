@@ -1,4 +1,5 @@
 import React from 'react'
+import AnimatedText from './util/AnimatedText';
 
 const Footer = ({ setCursorScale, setCursorColor, setCursorText }) => {
     const scrollToTop = () => {
@@ -39,7 +40,8 @@ const Footer = ({ setCursorScale, setCursorColor, setCursorText }) => {
                     setCursorColor('bg-secondary/70'); // reset color
                     setCursorText('');
                 }}>
-                Azlan Raban
+                {/* Azlan Raban */}
+                <AnimatedText text="Azlan Raban" />
             </div>
         </div >
     )

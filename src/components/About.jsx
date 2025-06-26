@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import image from '../assets/images/me22.jpg'
+import AnimatedText from './util/AnimatedText';
 
 const CounterItem = ({ label, target }) => {
     const [count, setCount] = useState(0);
@@ -47,10 +48,10 @@ const CounterItem = ({ label, target }) => {
 
     return (
         <div ref={ref} className="flex flex-col items-center">
-            <div className="text-4xl md:text-5xl font-extrabold text-text-primary">
+            <div className="text-2xl md:text-5xl font-extrabold text-text-primary">
                 {count}+
             </div>
-            <div className="text-lg font-semibold text-text-secondary mt-1">
+            <div className="text-lg font-semibold text-center text-text-secondary mt-1">
                 {label}
             </div>
         </div>
@@ -62,8 +63,9 @@ const About = () => {
         <div className="container mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2">
                 <div className="text-text-primary">
-                    <div className="text-3xl font-bold pt-5 pb-5 pl-5 font-primary">
-                        About
+                    <div className="text-3xl font-bold pt-5 pb-5 pl-5 font-primary uppercase">
+                        {/* About */}
+                        <AnimatedText text="About" />
                     </div>
                     <hr className="border-secondary" />
                 </div>
@@ -86,7 +88,7 @@ const About = () => {
                         Outside of development, I’m deeply involved in community and event-driven spaces. As an Event Coordinator and team member at AnimeLK, I’ve helped organize and host large-scale events such as the annual Anime Cosplay Competition, raffles, and interactive contests. I’ve collaborated with artists and creators to market and sell merchandise while engaging niche audiences through targeted strategies. I’m also an active member of Tabletop_sl, participating in bi-monthly gaming events and occasionally hosting sessions—coordinating RSVPs, welcoming newcomers, and fostering an inclusive, organized environment. Earlier on, I served as President of my school’s English Literature Club, where I led events like English Day and literary competitions, gaining valuable experience in public engagement, teamwork, and leadership. These roles have helped me build strong communication, coordination, and community-building skills that I carry into both my professional and personal life.
                     </div>
                     {/* Counting staaaaarrrs */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                    <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-8 mt-8">
                         <CounterItem label="Age" target={22} />
                         <CounterItem label="Projects Eaten" target={10} />
                         <CounterItem label="Coffees Had" target={9999} />

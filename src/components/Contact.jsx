@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import { github, insta, linkedin, info } from '../assets';
 import { Link } from 'react-router';
+import AnimatedText from './util/AnimatedText';
 
 const Contact = forwardRef((props, ref) => (
     <div
@@ -8,7 +9,8 @@ const Contact = forwardRef((props, ref) => (
         className="container mx-auto h-[30vh] md:h-[80vh] flex flex-col justify-center items-center text-text-primary"
     >
         <div className="text-[60px] md:text-lesslargec uppercase font-primary font-extrabold text-center leading-none">
-            Say Hello!
+            {/* Say Hello! */}
+            <AnimatedText text="Say Hello!" />
         </div>
 
         <div className="grid grid-cols-4 gap-6 mt-8">

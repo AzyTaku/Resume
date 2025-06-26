@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
+import AnimatedText from './util/AnimatedText';
+import SlideIn from './util/SlideIn';
 
 const experiences = [
     {
@@ -46,64 +48,55 @@ const experiences = [
 
 
 const Exp = () => {
-    // We'll track visibility for each card by index
-    const [visibleCards, setVisibleCards] = useState({});
-    const cardRefs = useRef([]);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    const index = entry.target.getAttribute('data-index');
-                    if (entry.isIntersecting) {
-                        setVisibleCards((prev) => ({ ...prev, [index]: true }));
-                        observer.unobserve(entry.target); // Stop observing once visible
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        );
-
-        cardRefs.current.forEach((ref) => {
-            if (ref) observer.observe(ref);
-        });
-
-        return () => observer.disconnect();
-    }, []);
-
     return (
         <div className="container mx-auto font-primary mt-10">
             <div className="grid grid-cols-1 sm:grid-cols-2">
-                <div className='text-text-primary'>
-                    <div className='text-3xl font-bold pt-5 pb-5 pl-5'>
-                        EXP
+                <div className="text-text-primary">
+                    <div className="text-3xl font-bold pt-5 pb-5 pl-5 uppercase">
+                        <AnimatedText text="Experience" />
                     </div>
-                    <hr className='border-secondary' />
+                    <hr className="border-secondary" />
                 </div>
             </div>
+
             <div className="flex flex-col mt-10 space-y-4">
-                {experiences.map((exp, index) => (
-                    <div
-                        key={index}
-                        className={`box-hover w-3/4 h-full rounded p-4 overflow-auto ${index % 2 === 0
-                            ? 'bg-secondary self-center md:self-end text-text-primary'
-                            : 'bg-text-primary self-center md:self-start text-secondary'
-                            }`}
-                    >
-                        <h3 className="text-xl font-bold underline-animate cursor-crosshair">{exp.title}</h3>
-                        <p className="text-sm">
-                            {exp.company} | {exp.duration} | {exp.location}
-                        </p>
-                        <ul className="mt-2 list-disc list-inside text-sm space-y-2 tracking-wide">
-                            {exp.bullets.map((item, i) => (
-                                <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
-                            ))}
-                        </ul>
-                    </div>
-                ))}
+                {experiences.map((exp, index) => {
+                    const isEven = index % 2 === 0;
+                    const alignmentClass = isEven
+                        ? "bg-secondary self-center md:self-end text-text-primary ml-auto"  // push right side cards to right
+                        : "bg-text-primary self-center md:self-start text-secondary mr-auto"; // push left side cards to left
+                    const slideDirection = isEven ? "right" : "left";
+
+                    return (
+                        <SlideIn
+                            key={index}
+                            direction={slideDirection}
+                            duration={1.2}
+                            threshold={0}
+                            triggerOnce={true}
+                        >
+                            <div
+                                className={`box-hover w-full md:w-3/4 h-full rounded p-4 overflow-auto ${alignmentClass}`}
+                            >
+                                <h3 className="text-xl font-bold underline-animate cursor-crosshair">
+                                    {exp.title}
+                                </h3>
+                                <p className="text-sm">
+                                    {exp.company} | {exp.duration} | {exp.location}
+                                </p>
+                                <ul className="mt-2 list-disc list-inside text-sm space-y-2 tracking-wide">
+                                    {exp.bullets.map((item, i) => (
+                                        <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
+                                    ))}
+                                </ul>
+                            </div>
+                        </SlideIn>
+                    );
+                })}
+
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Exp
+export default Exp;
