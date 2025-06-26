@@ -58,7 +58,7 @@ const CounterItem = ({ label, target }) => {
     );
 };
 
-const About = () => {
+const About = ({ setCursorColor, setCursorScale, setCursorText }) => {
     return (
         <div className="container mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2">
@@ -76,7 +76,17 @@ const About = () => {
                     <img
                         src={image}
                         alt="About Image"
-                        className="h-full w-full rounded"
+                        className="h-full w-full rounded cursor-none"
+                        onMouseEnter={() => {
+                            setCursorScale(2);
+                            setCursorColor('bg-white/30 backdrop-blur-xs');
+                            setCursorText("That's me");
+                        }}
+                        onMouseLeave={() => {
+                            setCursorScale(1);
+                            setCursorColor('bg-secondary/70');
+                            setCursorText('');
+                        }}
                     />
                 </div>
 

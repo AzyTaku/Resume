@@ -89,8 +89,7 @@ const Tech = ({ setCursorScale, setCursorColor, setCursorText }) => {
                                 setCursorScale(1);
                                 setCursorColor('bg-secondary/70');
                                 setCursorText('');
-                            }}
-                        >
+                            }}>
                             <img
                                 src={icon.src}
                                 alt={icon.name}
@@ -106,7 +105,7 @@ const Tech = ({ setCursorScale, setCursorColor, setCursorText }) => {
                 {skillIcons.map((icon, index) => (
                     <div
                         key={index}
-                        className="flex flex-col items-center justify-center p-4 rounded shadow cursor-pointer hover:bg-gray-100"
+                        className="flex flex-col items-center justify-center p-4 rounded shadow cursor-pointer"
                         title={icon.name}
                     >
                         <img

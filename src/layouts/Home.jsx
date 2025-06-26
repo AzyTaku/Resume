@@ -40,7 +40,7 @@ const Home = () => {
                 }}
                 className={`pointer-events-none fixed top-0 left-0 w-10 h-10 rounded-full hidden lg:flex items-center justify-center select-none transition-colors duration-300 ${cursorColor} backdrop-blur-md z-[100]`}>
                 {cursorText && (
-                    <span className="text-xs sm:text-[8px] px-2 py-1 rounded font-light">
+                    <span className="text-xs sm:text-[8px] px-2 py-1 rounded font-light text-center">
                         {cursorText}
                     </span>
                 )}
@@ -49,22 +49,25 @@ const Home = () => {
                 <Hero onScrollToContact={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })}
                     setCursorScale={setCursorScale}
                     setCursorColor={setCursorColor}
-                    setCursorText={setCursorText}
-                />
+                    setCursorText={setCursorText} />
                 <Exp />
-                <About />
+                <About
+                    setCursorScale={setCursorScale}
+                    setCursorColor={setCursorColor}
+                    setCursorText={setCursorText} />
                 <Projects />
                 <Tech
                     setCursorScale={setCursorScale}
                     setCursorColor={setCursorColor}
-                    setCursorText={setCursorText}
-                />
-                <Contact ref={contactRef} />
+                    setCursorText={setCursorText} />
+                <Contact ref={contactRef}
+                    setCursorScale={setCursorScale}
+                    setCursorColor={setCursorColor}
+                    setCursorText={setCursorText} />
                 <Footer
                     setCursorScale={setCursorScale}
                     setCursorColor={setCursorColor}
-                    setCursorText={setCursorText}
-                />
+                    setCursorText={setCursorText} />
             </AnimatedPage>
         </div>
     );
