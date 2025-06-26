@@ -86,8 +86,8 @@ const Exp = () => {
                     <div
                         key={index}
                         className={`box-hover w-3/4 h-full rounded p-4 overflow-auto ${index % 2 === 0
-                            ? 'bg-secondary self-end text-text-primary'
-                            : 'bg-text-primary self-start text-secondary'
+                            ? 'bg-secondary self-center md:self-end text-text-primary'
+                            : 'bg-text-primary self-center md:self-start text-secondary'
                             }`}
                     >
                         <h3 className="text-xl font-bold underline-animate cursor-crosshair">{exp.title}</h3>
