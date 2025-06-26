@@ -69,7 +69,7 @@ const About = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10 p-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10 p md:p-10">
                 <div className="flex top-1 self-start h-full w-full">
                     <img
                         src={image}

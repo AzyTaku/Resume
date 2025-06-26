@@ -40,11 +40,11 @@ const scrollToBottom = () => {
 const Hero = ({ setCursorScale, setCursorColor, setCursorText, onScrollToContact }) => {
     return (
         <div className="container mx-auto font-primary h-[100vh]">
-            <div className="flex justify-between items-center text-text-primary pt-5 pb-5 font-bold">
-                <Link to="/" className="text-3xl cursor-pointer">
+            <div className="flex justify-between items-center text-text-primary pt-5 p md:pb-5 font-bold">
+                <Link to="/" className="text-xl md:text-3xl cursor-pointer">
                     AzyTaku
                 </Link>
-                <div className='text-3xl hidden sm:block cursor-pointer'
+                <div className='text-xl md:text-3xl cursor-pointer'
                     onClick={onScrollToContact}
                     onMouseEnter={() => {
                         setCursorScale(2);
@@ -61,7 +61,7 @@ const Hero = ({ setCursorScale, setCursorColor, setCursorText, onScrollToContact
             </div>
             <hr className="border-secondary" />
             <div className="flex flex-col justify-center items-center text-text-primary uppercase tracking-wide h-[50vh] pt-4">
-                <Link to={"/"} className="text-[80px] sm:text-largec font-bold leading-none  cursor-pointer"
+                <Link to={"/"} className="text-[80px] text-center md:text-largec font-bold leading-none  cursor-pointer"
                     onMouseEnter={() => {
                         setCursorScale(4);
                         setCursorColor('bg-white/30 backdrop-blur-xs'); // darker color on hover
@@ -74,13 +74,13 @@ const Hero = ({ setCursorScale, setCursorColor, setCursorText, onScrollToContact
                     }}>
                     Azlan Raban
                 </Link>
-                <div className="text-2xl sm:text-3xl font-bold pt-4">
+                <div className="text-2xl sm:text-3xl font-bold pt-4 text-center">
                     <TypingEffect text="Sooftware Engineer & Fullstack Developer" speed={100} />
                     {/* Software Engineer & Fullstack Developer */}
                 </div>
             </div>
             <div className="flex mt-10">
-                <div className="max-w-[600px] text-2xl font-medium justify items-center tracking-tight text-text-primary bg-secondary p-5 rounded-xl ml-auto">
+                <div className="max-w-[600px] text-md md:text-2xl font-medium text-center justify items-center tracking-tight text-text-primary bg-secondary p-5 rounded-xl ml-auto">
                     Driven software engineer with a passion for building innovative, user-focused digital experiences that make a meaningful impact.
                 </div>
             </div>
