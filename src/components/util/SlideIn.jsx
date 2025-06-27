@@ -4,9 +4,9 @@ const SlideIn = ({
     children,
     className,
     direction = "right", // 'right', 'left', 'top', 'bottom'
-    duration = 0.6, // in seconds
-    threshold = 0.1, // trigger when 10% visible
-    triggerOnce = true, // animate only once, or every time it enters/leaves view
+    duration = 0.6,
+    threshold = 0.1,
+    triggerOnce = true,
 }) => {
     const ref = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
@@ -17,15 +17,15 @@ const SlideIn = ({
                 if (entry.isIntersecting) {
                     setIsVisible(true);
                     if (triggerOnce) {
-                        observer.disconnect(); // Stop observing after it becomes visible once
+                        observer.disconnect();
                     }
                 } else if (!triggerOnce) {
-                    setIsVisible(false); // If not triggerOnce, reset visibility when it leaves view
+                    setIsVisible(false);
                 }
             },
             {
-                root: null, // default is the viewport
-                rootMargin: "0px 0px -100px 0px", // triggers 100px before element fully enters viewport
+                root: null,
+                rootMargin: "0px 0px -100px 0px",
                 threshold: threshold,
             }
         );
@@ -37,9 +37,8 @@ const SlideIn = ({
         return () => {
             observer.disconnect();
         };
-    }, [threshold, triggerOnce]); // Re-run effect if threshold or triggerOnce changes
+    }, [threshold, triggerOnce]);
 
-    // Determine the initial transform based on direction
     const getInitialTransform = () => {
         switch (direction) {
             case "right":
@@ -51,7 +50,7 @@ const SlideIn = ({
             case "bottom":
                 return "translateY(100%)";
             default:
-                return "translateX(100%)"; // Fallback to right
+                return "translateX(100%)";
         }
     };
 
