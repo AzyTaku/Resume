@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import image from '../assets/Images/me22.jpg'
 import AnimatedText from './util/AnimatedText';
 
+
 const CounterItem = ({ label, target }) => {
     const [count, setCount] = useState(0);
     const [hasStarted, setHasStarted] = useState(false);
