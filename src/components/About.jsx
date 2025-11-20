@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import image from '../assets/images/me22.jpg'
+import image from '../assets/Images/me22.jpg'
 
 const CounterItem = ({ label, target }) => {
     const [count, setCount] = useState(0);
