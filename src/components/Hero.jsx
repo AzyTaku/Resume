@@ -44,7 +44,7 @@ const Hero = ({ setCursorScale, setCursorColor, setCursorText, onScrollToContact
                 <Link to="/" className="text-xl md:text-3xl cursor-pointer">
                     AzyTaku
                 </Link>
-                <div className='text-xl md:text-3xl cursor-pointer'
+                <button className='text-xl md:text-3xl cursor-pointer underline-animate'
                     onClick={onScrollToContact}
                     onMouseEnter={() => {
                         setCursorScale(2);
@@ -57,7 +57,7 @@ const Hero = ({ setCursorScale, setCursorColor, setCursorText, onScrollToContact
                         setCursorText('');
                     }}>
                     Keep in Touch
-                </div>
+                </button>
             </div>
             <hr className="border-secondary" />
             <div className="flex flex-col justify-center items-center text-text-primary uppercase tracking-wide h-[50vh] pt-4">
@@ -79,8 +79,18 @@ const Hero = ({ setCursorScale, setCursorColor, setCursorText, onScrollToContact
                     {/* Software Engineer & Fullstack Developer */}
                 </div>
             </div>
-            <div className="flex mt-10">
-                <div className="max-w-[600px] text-md md:text-2xl font-medium text-center justify items-center tracking-tight text-text-primary bg-secondary p-5 rounded-xl ml-auto">
+            <div className="flex mt-10 cursor-none">
+                <div className="max-w-[600px] text-md md:text-2xl font-medium text-center justify items-center tracking-tight text-text-primary bg-secondary p-5 rounded-xl ml-auto"
+                    onMouseEnter={() => {
+                        setCursorScale(2);
+                        setCursorColor('bg-white/30 backdrop-blur-xs'); // darker color on hover
+                        setCursorText("It's True");
+                    }}
+                    onMouseLeave={() => {
+                        setCursorScale(1); // reset size
+                        setCursorColor('bg-secondary/70'); // reset color
+                        setCursorText('');
+                    }}>
                     Driven software engineer with a passion for building innovative, user-focused digital experiences that make a meaningful impact.
                 </div>
             </div>

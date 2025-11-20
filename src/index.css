@@ -43,6 +43,22 @@
 }
 
 
+/* For Animated page */
+@keyframes slide-highlight {
+          0% {
+            transform: translateX(-100%);
+            opacity: 0.3;
+          }
+          100% {
+            transform: translateX(100%);
+            opacity: 0.7;
+          }
+        }
+        .animate-slide-highlight {
+          animation: slide-highlight 0.9s ease-in-out forwards;
+        }
+
+
 
 /* Carousal effect in tech page - abandoned and using react slick*/
 @keyframes scroll {

@@ -1,20 +1,23 @@
 import React from 'react'
+import AnimatedText from './util/AnimatedText'
 
 const Projects = () => {
     return (
         <div className="container mx-auto font-primary mt-10">
             <div className="grid grid-cols-1 sm:grid-cols-2">
                 <div className='text-text-primary'>
-                    <div className='text-3xl font-bold pt-5 pb-5 pl-5'>
-                        Projects & Education
+                    <div className='text-2xl md:text-3xl font-bold pt-5 pb-5 p md:pl-5 uppercase'>
+                        {/* Projects & Education */}
+                        <AnimatedText text="Projects & Education" />
                     </div>
                     <hr className='border-secondary' />
                 </div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 mt-10 px-10 font-primary gap-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 mt-10 p md:px-10 font-primary gap-10'>
                 <div className="flex flex-col space-y-8">
                     <h2 className="text-2xl font-bold text-text-primary uppercase underline decoration-secondary">
-                        Projects
+                        {/* Projects */}
+                        <AnimatedText text="Projects" />
                     </h2>
 
                     <div className="flex flex-col space-y-1">
@@ -56,7 +59,8 @@ const Projects = () => {
 
                 <div className="flex flex-col space-y-8">
                     <h2 className="text-2xl font-bold text-text-primary uppercase underline decoration-secondary">
-                        Education
+                        {/* Education */}
+                        <AnimatedText text="Education" />
                     </h2>
 
                     <div className="flex flex-col space-y-1">
@@ -68,8 +72,9 @@ const Projects = () => {
                         </p>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-text-primary uppercase underline decoration-secondary">
-                        Extra + Other
+                    <h2 className="text-2xl font-bold text-text-primary uppercase  decoration-secondary">
+                        {/* Extra + Other */}
+                        <AnimatedText text="Extra & Other" />
                     </h2>
                     <div className="flex flex-col space-y-1">
                         <h3 className="text-xl font-semibold text-text-primary">

@@ -4,6 +4,7 @@ import {
     JavaScript, Java, Python, C, CPlusPlus, CSS3, HTML5, ReactIcon, Nodejs,
     TailwindCSS, Express, MongoDB, Figma, Docker, Git,
 } from '../assets';
+import AnimatedText from './util/AnimatedText';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -62,9 +63,12 @@ const Tech = ({ setCursorScale, setCursorColor, setCursorText }) => {
 
     return (
         <div className="container mx-auto font-primary mt-10 overflow-hidden">
-            <div className="grid grid-cols-2">
-                <div className="text-text-primary text-left">
-                    <div className="text-3xl font-bold p-5">Tech & Skills</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2">
+                <div className="text-text-primary">
+                    <div className="text-3xl font-bold pt-5 pb-5 pl-5 font-primary uppercase">
+                        {/* Tech */}
+                        <AnimatedText text="Tech" />
+                    </div>
                     <hr className="border-secondary" />
                 </div>
             </div>
@@ -85,8 +89,7 @@ const Tech = ({ setCursorScale, setCursorColor, setCursorText }) => {
                                 setCursorScale(1);
                                 setCursorColor('bg-secondary/70');
                                 setCursorText('');
-                            }}
-                        >
+                            }}>
                             <img
                                 src={icon.src}
                                 alt={icon.name}
@@ -98,11 +101,11 @@ const Tech = ({ setCursorScale, setCursorColor, setCursorText }) => {
                 </Slider>
             </div>
 
-            <div className="md:hidden grid grid-cols-4 gap-2 p-4">
+            <div className="md:hidden grid grid-cols-4 gap-2 p md:p-4">
                 {skillIcons.map((icon, index) => (
                     <div
                         key={index}
-                        className="flex flex-col items-center justify-center p-4 rounded shadow cursor-pointer hover:bg-gray-100"
+                        className="flex flex-col items-center justify-center p-4 rounded shadow cursor-pointer"
                         title={icon.name}
                     >
                         <img

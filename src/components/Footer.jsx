@@ -1,4 +1,5 @@
 import React from 'react'
+import AnimatedText from './util/AnimatedText';
 
 const Footer = ({ setCursorScale, setCursorColor, setCursorText }) => {
     const scrollToTop = () => {
@@ -9,7 +10,7 @@ const Footer = ({ setCursorScale, setCursorColor, setCursorText }) => {
     };
     return (
         <div className='container mx-auto h--full flex flex-col mt-10'>
-            <div
+            <button
                 onClick={scrollToTop}
                 className="self-end font-bold font-primary mb-2 text-text-primary text-lg md:text-2xl cursor-pointer underline-animate"
                 role="button"
@@ -25,9 +26,9 @@ const Footer = ({ setCursorScale, setCursorColor, setCursorText }) => {
                     setCursorText('');
                 }}>
                 Back to Top
-            </div>
+            </button>
             <hr className="border-1 border-secondary w-full" />
-            <div className='flex flex-col items-center text-[50px] md:text-largec font-primary uppercase text-text-primary cursor-pointer font-bold'
+            <div className="flex flex-col items-center justify-center text-center text-[50px] md:text-largec font-primary uppercase text-text-primary cursor-pointer font-bold"
                 onClick={scrollToTop}
                 onMouseEnter={() => {
                     setCursorScale(4);
@@ -39,7 +40,8 @@ const Footer = ({ setCursorScale, setCursorColor, setCursorText }) => {
                     setCursorColor('bg-secondary/70'); // reset color
                     setCursorText('');
                 }}>
-                Azlan Raban
+                {/* Azlan Raban */}
+                <AnimatedText text="Azlan Raban" />
             </div>
         </div >
     )
